@@ -1,0 +1,40 @@
+DataType & Variable:
+
+KeyWords used to declare Variables.
+1)var:
+    ->Global scope Variable
+    ->variable can be re-declared and updated.
+    ->Not in used nowdays.
+2)let:
+    ->Local/Block scope variable.
+    ->variable cannot be re-declared and but can be updated.
+3)const:
+    ->Local/Block scope variable.
+    ->variable cannot be re-declared & updated.
+    ->const object -->key can be changed.
+
+DataType:
+
+    a)Primitive
+        1)Number
+        2)String
+        3)Boolean
+        4)Undefine
+        5)Null
+
+    b)Non-Primitive
+        1)Object
+            Eg:
+             const student = {
+                fullName: "Mohan Koirala",
+                age: 23,
+                cgpa: 8.2,
+                isPass: true
+             };
+
+             console.log(student.age);   //23
+             console.log(student["age"]);  //23
+
+        2)Array
+        3)Function
+        4)RegEx

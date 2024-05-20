@@ -25,3 +25,5 @@ const num = (str) => {
 }
 
 num("mohan");
+
+///is main removed.

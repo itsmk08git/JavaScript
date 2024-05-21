@@ -14,7 +14,7 @@
     add(para1, para2);
  */
 
-const num = (str) => {
+const n1 = (str) => {
     let count = 0;
     for(let char of str) {
         if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
@@ -22,6 +22,6 @@ const num = (str) => {
         }
     }
     console.log(count);
-}
+};
 
-num("mohan");
+n1("mohan");

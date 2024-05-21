@@ -137,7 +137,7 @@ let newArray = numm1.map((val) => {
 
 console.log(newArray);
 
-//Reduce method.
+//Reduce method for finding sum.
 let num3 = [1,2,3,4,5];
 
 let sum = num3.reduce( (result, current_value) => {
@@ -146,4 +146,10 @@ let sum = num3.reduce( (result, current_value) => {
 
 console.log(sum);
 
-            
+let num4 = [1,2,3,4,5];
+
+let sum1 = num4.reduce( (prev, curr) => {
+    return prev > curr ? prev : curr;
+})
+
+console.log(sum1);

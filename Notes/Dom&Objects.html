@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>
+
+        <script>
+                /**
+                 * DOM : Document Object Model
+                 *
+                */
+
+                /**
+                 * Window Object:
+                 * The window object represents an open window in a browser.
+                 * It is browser's object and automatically created by browser.
+                 * It's a global object.
+                 */
+
+                /**
+                 * DOM Manipulation
+                 * 1)selecting with id: document.getElementById("myId")
+                 *
+                 * 2)selecting with class: document.getElementByClassName("myClass")
+                 *
+                 * 3)selecting with tag: document.getElementByTagName("p")
+                 *
+                 * Query Selectors
+                 * 1)document.querySelector("myId/myClass/tag") //returns first element
+                 *
+                 * 2)document.querySelectorAll("myId/myClass/tag")  //returns a NodeList
+                 *
+                 *
+                 * =>PROPERTIES:
+                 * tagName: returns tag for element nodes
+                 * innerText: returns the text content of the element and all its children
+                 * innerHTML: returns the plain text to or HTML contents in the elements
+                 * textContent: returns textual content even for hidden elements
+                 *
+                 */
+
+                // console.log(document.querySelector('button').innerHTML);
+                //     //Every HTML has a property .innerHTML
+
+                // document.querySelector('button').innerHTML = 'Welcome'
+
+                // const buttonElement= document.querySelector(".js-button");
+                // console.log(buttonElement);
+                /* document.body.innerHTML = 'Hello';
+                 document.title = 'Rock Paper'
+                 document.body.innerHTML = '<button>Good Job</button>';
+                */
+
+                /**
+                 * Local Storage:
+                 * localStorage is an object that allows to save value in the browser.
+                 * It has no expiration date.
+                 * 
+                 * ->localStorage: object
+                 * ->setItem(): it's the method to save the value.
+                 * Syntax: localStorage.setItem('name','value') ->It only suppports string
+                 */
+
+                const product2 = {
+                        name: 'shirt',
+                        rating: {
+                                stars: 4.5,
+                                count: 87
+                        },
+                        fun: function function1() {
+                                console.log('Function inside objects.');
+                        }
+                };
+
+                /**
+                 * //console is an object provided by js, and log() is function inside console = Methods
+                 * object + function = methods.
+                */
+                console.log(product2); 
+                console.log(product2.name);
+                console.log(product2['name']);
+                console.log(product2.rating.count);
+
+                product2.fun(); //function inside object is called.
+
+                /**
+                 * =>Built-in objects in JS
+                 * 1)JSON(JavaScript Object Notation)
+                 *  ->a syntax
+                 *  ->similar to JavaScript Object
+                 *  ->but has less features
+                 * Rules:
+                 * ->all properties inside json must use double quotes("").
+                 * ->doesn't  supports function.
+                 * 
+                 * why JSON?
+                 * ->JS Object is only understand by JS, but JSON is understand by almost every programming languages.
+                 * ->Used to send data between computers.
+                 * ->to store data.
+                 * 
+                 * JSON Object is used in coverting js object -> JSON $ vice versa.
+                */
+
+                console.log(JSON.stringify(product2)); 
+                /**
+                 *stringify is a function inside JSON object.
+                 *The result of the stringify is a string.
+                */
+                console.log(JSON.parse(JSON.stringify(product2))); //parse is a function inside JSON object.
+
+        </script>
+</body>
+
+</html>

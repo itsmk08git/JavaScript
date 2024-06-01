@@ -23,7 +23,7 @@ let marvelHeros = ["thor", "Ironman", "spiderman"]
  *          Syntax: slice(startldx, endldx)
  *          
  * 
- * 2)splice(): change the original array (add, remove, replace)
+ * 2)splice(): change the original array (index, no_of_value_to_be_removed, addnew_value)
  *              Syntax: splice(startldx, delCount, new)
  */
 
@@ -32,7 +32,7 @@ let dcHeros = ["Batman", "robin", "Superman", "Cyborg"];
 console.log(dcHeros.slice(1,3));  //Index 1st and 2nd will be at console
             
 let arr = [1, 2, 3, 4, 5, 6];
-arr.splice(2, 3, 12, 34, 45);
+arr.splice(1, 3 , 99, 100); //form index 1, 3 values are removed and 99, 100 are added.
 console.log(arr);
             
 /**

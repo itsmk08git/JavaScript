@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>rock-paper scissors</title>
 </head>
 
 <body>
@@ -26,16 +26,21 @@
 
     ">Scissors</button>
 
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
     <button onclick="
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;
         localStorage.removeItem('score');
+        updateScoreElement();
     ">Reset</button>
 
     <script>
         const score = JSON.parse(localStorage.getItem('score'))
-        || {
+            || {
             wins: 0,
             losses: 0,
             ties: 0
@@ -50,6 +55,8 @@
             };
         }
         */
+
+        updateScoreElement();
 
         function playGame(playerMove) {
             const computerMove = pickComputerMove();
@@ -67,7 +74,7 @@
                     result = 'You Won.';
                 }
 
-            }else if (playerMove === 'paper') {
+            } else if (playerMove === 'paper') {
                 if (computerMove === 'rock') {
                     result = 'You Won.';
                 }
@@ -78,7 +85,7 @@
                     result = 'You Lose.';
                 }
 
-            }else if (playerMove === 'scissors') {
+            } else if (playerMove === 'scissors') {
                 if (computerMove === 'rock') {
                     result = 'You Lose.';
                 }
@@ -90,19 +97,28 @@
                 }
             }
 
-            if(result === 'You Won.') {
+            if (result === 'You Won.') {
                 score.wins++;
-            }else if(result === 'You Lose.') {
+            } else if (result === 'You Lose.') {
                 score.losses++;
-            }else if(result === 'Tie.') {
+            } else if (result === 'Tie.') {
                 score.ties++;
             }
 
             localStorage.setItem('score', JSON.stringify(score)); //for saving the score
 
-            alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result} \nWins:${score.wins}, Losses:${score.losses} , Tie:${score.ties}`);
+            updateScoreElement();
+
+            document.querySelector('.js-result').innerHTML = result;
+
+            document.querySelector('.js-moves').innerHTML = `You: ${playerMove} - Computer: ${computerMove}`;
+
         }
 
+        function updateScoreElement() {
+            document.querySelector('.js-score').innerHTML =
+                `Wins:${score.wins}, Losses:${score.losses} , Tie:${score.ties}`;
+        }
 
         function pickComputerMove() {
             const randomNumber = Math.random();

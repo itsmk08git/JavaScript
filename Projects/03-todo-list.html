@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
+
+    <link rel="stylesheet" href="03-todo-list.css">
 </head>
 
 <body>
     <p>ToDo List Practice</p>
-    <input placeholder="Todo Name"
-    class="js-name-input" onkeydown="
-        handleCostKeydown(event);
-    ">
-    
-    <button onclick="
-        addTodo();
-    ">Add</button>
+    <div class="todo-input-grid">
+        <input placeholder="Todo Name"
+            class="js-name-input name-input" onkeydown="
+            handleCostKeydown(event);
+        ">
 
-    <div class="js-todo-list"></div>
-        
+        <input type="date" class="js-dueDate-input dueDate-input">
+
+        <button onclick="
+        addTodo();
+    " class="add-todo-button">Add</button>
+    </div>
+
+    <!--Todo names & date are added here in this section.-->
+    <div class="js-todo-list todo-grid"></div>
+
     <script src="03-todo-list.js"></script>
 </body>
 

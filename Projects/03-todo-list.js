@@ -1,4 +1,4 @@
-const todoList = ['mohan', 'rohan'];
+const todoList = [];
 
 renderTodoList();
 
@@ -10,10 +10,13 @@ function renderTodoList() {
         const html = `<p>${todo}</p>`;
         todoListHtml += html;
     }
-
-    console.log(todoListHtml)
-
     document.querySelector('.js-todo-list').innerHTML = todoListHtml;
+}
+
+function handleCostKeydown (event) {
+    if(event.key === 'Enter') {
+        addTodo();
+    }
 }
 
 

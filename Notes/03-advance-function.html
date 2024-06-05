@@ -9,7 +9,33 @@
     <button onclick="" class="js-button">Click</button>
 
     <script>
-        const buttonElement = document.querySelector('.js-button')
+        /**
+         * addEventListener() method attaches an event handler to the specified elements.
+         * Takes two parameter: 
+         * 1. event or what type of interaction we want to listen to.
+         * 2. function we want to run.
+         * 
+         * It helps us to add multiple event listeners for an event to one element.
+         * We can remove an event listener using .removeEventListener();
+         * 
+         * removeEventListener() also takes two argument
+         * 1. event
+         * 2. exact same function we used in the addEventListener.
+        */
+
+        const buttonElement = document.querySelector('.js-button');
+
+        const eventListener = () => {
+            console.log('Clicked.');
+        };
+
+        buttonElement.addEventListener('click', eventListener); //clicked
+
+        buttonElement.removeEventListener('click', eventListener);  //removed
+
+        buttonElement.addEventListener('click', eventListener); //clicked
+
+
     </script>
 </body>
 </html>
